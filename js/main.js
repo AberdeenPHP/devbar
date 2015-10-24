@@ -54,7 +54,6 @@ function initMap() {
     map.mapTypes.set(customMapTypeId, customMapType);
     map.setMapTypeId(customMapTypeId);
 
-    // TODO: get js object from CSV
     var infowindow = new google.maps.InfoWindow();
 
     // add markers
