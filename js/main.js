@@ -73,6 +73,7 @@ function initMap() {
             $( "#data_display" ).append( "<p>" + result[i].title + "</p>" );
             if (result[i].lat != "" && result[i].long != "") {
                 addMarker(result[i], map);
+                console.log('added ' + result[i].title + ' at ' + result[i].lat + '/' + result[i].long);
             }
             console.log("\n"); 
           }
