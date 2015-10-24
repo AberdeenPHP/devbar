@@ -55,44 +55,29 @@ function initMap() {
     map.setMapTypeId(customMapTypeId);
 
     // TODO: get js object from CSV
+    var infowindow = new google.maps.InfoWindow();
 
     // add markers
     $.get('https://rawgit.com/AberdeenPHP/devbar/master/data.csv', function(data, status){
-          console.log(data);
           var result = $.csv.toObjects(data);
           //console.log(result);
           var arrayLength = result.length;
-          for (var i = 0; i < arrayLength; i++) {          
-            console.log(result[i].title);
-            //console.log(result[i].category);
-            //console.log(result[i].description);
-            console.log(result[i].lat);
-            console.log(result[i].long);
-            //console.log(result[i].media);             
-            //console.log(result[i].url);             
-            $( "#data_display" ).append( "<p>" + result[i].title + "</p>" );
+          for (var i = 0; i < arrayLength; i++) {
             if (result[i].lat != "" && result[i].long != "") {
-                addMarker(result[i], map);
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(result[i].lat, result[i].long),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(infoContent(result[i]));
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
             }
-            console.log("\n"); 
           }
     });   
-}
-
-function addMarker(marker, map) {
-    var infowindow = new google.maps.InfoWindow({
-        content: infoContent(marker)
-    });
-
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(parseInt(marker.lat),parseInt(marker.long)),
-        map: map,
-        title: marker.title
-    });
-
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
-    });
 }
 
 function infoContent(marker){
@@ -101,7 +86,7 @@ function infoContent(marker){
         '</div>'+
         '<h1 id="firstHeading" class="firstHeading">'+marker.title+'</h1>'+
         '<div id="bodyContent">'+
-        '<p><b>'+marker.title+'</b>'+marker.description+'</p>'+
+        '<p><b>'+marker.title+'</b> '+marker.description+'</p>'+
         '</div>'+
         '</div>';
 }
