@@ -84,7 +84,7 @@ function infoContent(marker){
     output += '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">'+marker.title+'</h1>'+
+        '<h3 id="firstHeading" class="firstHeading">'+marker.title+'</h3>'+
         '<div id="bodyContent">'+
         '<p><b>'+marker.title+'</b> '+marker.description+'</p>';
         
