@@ -59,10 +59,8 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-      <div id="data_display">
-      </div>
-      <div id="data_map">
-      </div>      
+      <div id="data_display"></div>
+      <div id="data_map"></div>      
 
 
       </div>
@@ -79,8 +77,33 @@
 
         <script src="js/main.js"></script>
         <script src="js/jquery.csv.js"></script>        
+
+    <style>
+      #data_map {
+        height: 300px;
+        width: 300px;
+      }
+    </style>
+
+    <script>
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('data_map'), {
+    center: {lat: 57.1498817, lng: -2.1960762},
+    zoom: 8
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBSQVorIZZydOqNf-6Jdp0n1p0NEvFeCjk&callback=initMap"
+        async defer></script>
+
+        
+        
         
       <script>
+
 
 
       $.get('data.csv', function(data, status){
@@ -110,6 +133,9 @@
              console.log(result[i].url);             
 
              console.log("\n");  
+   
+
+             $( "#data_display" ).append( "<p>" + result[i].title + "</p>" );
              //Do something
           }
           
@@ -119,7 +145,9 @@
           
           //console.log(data);
           
-      });
+          
+      });     
+     
       
 
       //console.log($devbardata);
