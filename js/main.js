@@ -60,16 +60,16 @@ function initMap() {
     $.get('../data.csv', function(data, status){
           console.log(data);
           var result = $.csv.toObjects(data);
-          console.log(result);
+          //console.log(result);
           var arrayLength = result.length;
           for (var i = 0; i < arrayLength; i++) {          
             console.log(result[i].title);
-            console.log(result[i].category);
-            console.log(result[i].description);
+            //console.log(result[i].category);
+            //console.log(result[i].description);
             console.log(result[i].lat);
             console.log(result[i].long);
-            console.log(result[i].media);             
-            console.log(result[i].url);             
+            //console.log(result[i].media);             
+            //console.log(result[i].url);             
             $( "#data_display" ).append( "<p>" + result[i].title + "</p>" );
             if (result[i].lat != "" && result[i].lat != "") {
                 addMarker(result[i], map);
