@@ -93,7 +93,7 @@ function infoContent(marker){
     if (marker.url != "") {
         output += '<a href=\''+ marker.url + '\'>read more...</a>';
     }        
-    output += '<div id="content">'+'</div>'+
+    output += '</div>'+
         '</div>';    
 
 }
