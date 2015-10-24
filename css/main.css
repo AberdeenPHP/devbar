@@ -38,6 +38,8 @@ footer {
 }
 .navbar-brand {
    background: transparent url("../images/faeberdeen-logo.png") no-repeat fixed center;
+   height: 34px;
+   width: 105px;
 }
 
 
