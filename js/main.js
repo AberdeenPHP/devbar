@@ -57,7 +57,7 @@ function initMap() {
     // TODO: get js object from CSV
 
     // add markers
-    $.get('data.csv', function(data, status){        
+    $.get('../data.csv', function(data, status){
           console.log(data);
           var result = $.csv.toObjects(data);
           console.log(result);
@@ -85,7 +85,7 @@ function addMarker(marker, map) {
     });
 
     var marker = new google.maps.Marker({
-        position: {lat: marker.lat, lng: marker.long},
+        position: {lat: parseInt(marker.lat), lng: parseInt(marker.long)},
         map: map,
         title: marker.title
     });
