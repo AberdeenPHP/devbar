@@ -71,7 +71,7 @@ function initMap() {
             //console.log(result[i].media);             
             //console.log(result[i].url);             
             $( "#data_display" ).append( "<p>" + result[i].title + "</p>" );
-            if (result[i].lat != "" && result[i].lat != "") {
+            if (result[i].lat != "" && result[i].long != "") {
                 addMarker(result[i], map);
             }
             console.log("\n"); 
