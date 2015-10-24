@@ -32,13 +32,19 @@ footer {
    z-index: 1000;
    background: white;
 }
-
+.navbar {
+   border-bottom-color: #912125;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #912125;
+}
 .navbar-inverse {
    background-color: #C1272D;
    background-image: none;
 }
 .navbar-brand {
-   background: transparent url("../images/faeberdeen-logo.png") no-repeat fixed center;
+   background-image: url("../images/faeberdeen-logo.png");
+   background-size: cover;
    height: 34px;
    width: 105px;
    display: inline-block;
