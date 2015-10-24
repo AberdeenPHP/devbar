@@ -91,7 +91,7 @@ function infoContent(marker){
         output += '<img src=\'https://rawgit.com/AberdeenPHP/devbar/master/media/'+ marker.media + '\'>';
     }
     if (marker.url != "") {
-        output += '<a href=\''+ marker.url + '\'>read more...</a>';
+        //output += '<a href=\''+ marker.url + '\'>read more...</a>';
     }        
     output += '</div>'+
         '</div>';    
