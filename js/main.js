@@ -85,7 +85,7 @@ function addMarker(marker, map) {
     });
 
     var marker = new google.maps.Marker({
-        position: {lat: parseInt(marker.lat), lng: parseInt(marker.long)},
+        position: new google.maps.LatLng(parseInt(marker.lat),parseInt(marker.long)),
         map: map,
         title: marker.title
     });
