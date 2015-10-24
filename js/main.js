@@ -89,10 +89,10 @@ function infoContent(marker){
         '<p><b>'+marker.title+'</b> '+marker.description+'</p>';
         
         if (marker.media != "") {
-            output += '<img src=\'https://rawgit.com/AberdeenPHP/devbar/master/media/'+ marker.media + '\'>'+
+            output += '<img src=\'https://rawgit.com/AberdeenPHP/devbar/master/media/'+ marker.media + '\'>';
         }
         if (marker.url != "") {
-            output += '<a href=\''+ marker.url + '\'>read more...</a>'+
+            output += '<a href=\''+ marker.url + '\'>read more...</a>';
         }        
     output += '<div id="content">'+'</div>'+
         '</div>';    
