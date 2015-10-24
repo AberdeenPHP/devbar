@@ -57,7 +57,7 @@ function initMap() {
     // TODO: get js object from CSV
 
     // add markers
-    $.get('https://rawgit.com/AberdeenPHP/devbar/master/data.csv', function(data, status){
+    $.get('../data.csv', function(data, status){
           console.log(data);
           var result = $.csv.toObjects(data);
           //console.log(result);
