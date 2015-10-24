@@ -35,6 +35,7 @@ footer {
 
 .navbar-inverse {
    background-color: #C1272D;
+   background-image: none;
 }
 .navbar-brand {
    background: transparent url("../images/faeberdeen-logo.png") no-repeat fixed center;
