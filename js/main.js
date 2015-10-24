@@ -80,12 +80,21 @@ function initMap() {
 }
 
 function infoContent(marker){
-    return '<div id="content">'+
+    var output = '';
+    output += '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
         '<h1 id="firstHeading" class="firstHeading">'+marker.title+'</h1>'+
         '<div id="bodyContent">'+
-        '<p><b>'+marker.title+'</b> '+marker.description+'</p>'+
-        '</div>'+
-        '</div>';
+        '<p><b>'+marker.title+'</b> '+marker.description+'</p>';
+        
+        if (marker.media != "") {
+            output += '<img src=\'https://rawgit.com/AberdeenPHP/devbar/master/media/'+ marker.media + '\'>'+
+        }
+        if (marker.url != "") {
+            output += '<a href=\''+ marker.url + '\'>read more...</a>'+
+        }        
+    output += '<div id="content">'+'</div>'+
+        '</div>';    
+
 }
