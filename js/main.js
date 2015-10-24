@@ -80,8 +80,7 @@ function initMap() {
 }
 
 function infoContent(marker){
-    var output = '';
-    output += '<div id="content">'+
+    var output = '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
         '<h3 id="firstHeading" class="firstHeading">'+marker.title+'</h3>'+
