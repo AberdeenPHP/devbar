@@ -95,5 +95,6 @@ function infoContent(marker){
     }        
     output += '</div>'+
         '</div>';    
+    return output;
 
 }
