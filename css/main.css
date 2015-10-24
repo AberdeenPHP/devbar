@@ -33,7 +33,12 @@ footer {
    background: white;
 }
 
-
+.navbar-inverse {
+   background-color: #222;
+}
+.navbar-brand {
+   background: transparent url("../images/faeberdeen-logo.png") no-repeat fixed center;
+}
 
 
 
